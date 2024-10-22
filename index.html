@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramenta de Estudo de Frases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Estudo de Frases com Áudio (TTS)</h1>
+
+    <div id="csvFile">
+        
+    <label for="csvFile">Carregar frases de um arquivo CSV:</label>
+    <input type="file" id="csvFile" accept=".csv">
+
+    </div>
+  
+
+    
+
+
+    
+    <!-- Dropdown para seleção de frases em português -->
+    <div id="dropdown-container">
+        <label for="frase-dropdown">Selecione uma frase em português:</label>
+        <select id="frase-dropdown" onchange="mostrarFraseSelecionada()">
+            <option value="">-- Selecione --</option>
+        </select>
+
+
+    </div>
+
+    <h1>Estudo de Frases com Áudio (TTS)</h1>
+
+
+
+
+    <!-- Exibir as frases traduzidas -->
+    <div id="frase-selecionada">
+        <p><strong>Português:</strong> <span id="frase-portugues"></span></p>
+
+        <p><strong>Inglês:</strong> <span id="frase-ingles"></span> 
+            <button onclick="playAudio('ingles')">Ouvir</button>
+        </p>
+        
+        <p><strong>Italiano:</strong> <span id="frase-italiano"></span> 
+            <button onclick="playAudio('italiano')">Ouvir</button>
+        </p>
+        
+        <p><strong>Espanhol:</strong> <span id="frase-espanhol"></span> 
+            <button onclick="playAudio('espanhol')">Ouvir</button>
+        </p>
+        
+        <p><strong>Alemão:</strong> <span id="frase-alemao"></span> 
+            <button onclick="playAudio('alemao')">Ouvir</button>
+        </p>
+        
+        <p><strong>Francês:</strong> <span id="frase-frances"></span> 
+            <button onclick="playAudio('frances')">Ouvir</button>
+        </p>  
+        
+        <p><strong>Mandarim:</strong> <span id="frase-mandarim"></span> 
+            <button onclick="playAudio('mandarim')">Ouvir</button>
+        </p>
+
+    </div>
+
+    <!-- Controle de velocidade de áudio -->
+    <div id="controle-velocidade">
+        <label for="velocidade">Velocidade do Áudio:</label>
+        <input type="range" id="velocidade" min="0.5" max="2.0" value="1.0" step="0.1" onchange="alterarVelocidade()">
+        <span id="velocidade-valor">1.0x</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
